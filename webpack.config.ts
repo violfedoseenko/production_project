@@ -2,39 +2,29 @@
 // const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const webpack = require('webpack')
 
-import path from 'path'
 import webpack from 'webpack'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
+import path from 'path'
 
-const config: webpack.Configuration = {
-	//аналог обычного экспорта в js, но это верстия для node.js
-		mode: "development",
-		entry: path.resolve(__dirname, 'src', 'index.ts'), // склеиваем участки пути (__dirname - текущая папка)
-		// настройки куда и как будем делать сборку приложения
-		output: {
-			filename: "[name].[contenthash].js",// название главного файла в сборке
-			path: path.resolve(__dirname, 'build'), //куда сохраняется
-			clean: true,
-		},
-		plugins: [
-			new HtmlWebpackPlugin({
-				template: path.resolve(__dirname, 'public', 'index.html'), // при создании index.html в build используем шаблон из папки public файл index.html
-			}),
-			new webpack.ProgressPlugin(),
-		],
-		module: {
-			rules: [ //конфигурируем лоадеры, которые нужны для того, чтобы обрабатывать файлы, которые выходят за рамки js(png, jpg, gif, svg, css, scss, ts)
-				{
-					test: /\.tsx?$/,
-					use: 'ts-loader',
-					exclude: /node_modules/,
-				},
-			],
-		},
-		resolve: {
-			extensions: ['.tsx', '.ts', '.js'], //благодаря этому свойству не нужно указывать расширение при импорте
-		},
-	}
+import { buildPlugins } from './config/build/buildPlugins'
+import { buildLoaders } from './config/build/buildLoaders'
+import { buildResolvers } from './config/build/buildResolvers'
+import { buildWebpackConfig } from './config/build/buildWebpackConfig'
+import { BuildPath } from './config/build/types/config'
+
+export const paths: BuildPath = {
+	entry: path.resolve(__dirname, 'src', 'index.ts'), // склеиваем участки пути (__dirname - текущая папка)
+	output: path.resolve(__dirname, 'build'), //куда сохраняется
+	html: path.resolve(__dirname, 'public', 'index.html'), // при создании index.html в build используем шаблон из папки public файл index.html
+}
+
+const mode = 'development'
+const isDev = mode === 'development'
+
+const config: webpack.Configuration = buildWebpackConfig({
+	mode: 'development',
+	paths,
+	isDev
+})
 
 
 export default config
