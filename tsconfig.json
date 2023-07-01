@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+	// то, куда произвоодится сборка
+    "outDir": "./dist/",
+	// не позволяет использовать пересенные без явного указаная типа
+    "noImplicitAny": true,
+	// модульная ситема(различные способы модульной сборки)
+    "module": "ESNext",
+	// версия стандарта, в которую по итогу будет компилироваться код, для поддержки большинством браузеров
+    "target": "es5",
+    "jsx": "react",
+	// позволяет комприлятору обрабатывать не только ts файлы, но и js
+    "allowJs": true,
+    "moduleResolution": "node",
+	// позволяет использовать привычные импорты без *, даже если у используемого пакета отсутствует дефолтный импорт
+	"allowSyntheticDefaultImports": true,
+	// esModuleInterop позволяет работать с пакетами, которые исользуют common js  как с обычными пакетами с помощью import (система require() module.export = common.js)
+	"esModuleInterop": true,
+  },
+    "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
