@@ -1,11 +1,7 @@
 import { render } from 'react-dom'
-
-import {someFn} from './test'
-import { Counter } from './component/counter'
+import App from './App'
 
 render(
-	<div>
-		<Counter/>
-	</div>,
+	<App/>,
 	document.getElementById('root')
 )

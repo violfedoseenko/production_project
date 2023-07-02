@@ -1,4 +1,6 @@
 # Игнорируем директорию в любой директории проекта
 node_modules/
 build/*.js
+build/*.txt
 build/*.html
+build/css

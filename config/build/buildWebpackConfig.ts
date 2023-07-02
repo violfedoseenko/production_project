@@ -22,7 +22,7 @@ export function buildWebpackConfig(options:BuildOptions): webpack.Configuration 
 		},
 		plugins: buildPlugins(options), 
 		module: {
-			rules: buildLoaders()
+			rules: buildLoaders(options)
 		},
 		resolve: buildResolvers(),
 		// webpack на вхлде имеет кучу файлов, на выходе может быть вскего один, если произошла ошибка - ее становится сложно отследить
