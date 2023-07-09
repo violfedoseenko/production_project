@@ -16,7 +16,7 @@ import { BuildEnv, BuildPath } from './config/build/types/config'
 
 export default (env: BuildEnv)=> {
 	const paths: BuildPath = {
-		entry: path.resolve(__dirname, 'src', 'index.ts'), // склеиваем участки пути (__dirname - текущая папка)
+		entry: path.resolve(__dirname, 'src', 'index.tsx'), // склеиваем участки пути (__dirname - текущая папка)
 		build: path.resolve(__dirname, 'build'), //куда сохраняется
 		html: path.resolve(__dirname, 'public', 'index.html'), // при создании index.html в build используем шаблон из папки public файл index.html
 	}
