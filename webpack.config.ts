@@ -19,6 +19,7 @@ export default (env: BuildEnv)=> {
 		entry: path.resolve(__dirname, 'src', 'index.tsx'), // склеиваем участки пути (__dirname - текущая папка)
 		build: path.resolve(__dirname, 'build'), //куда сохраняется
 		html: path.resolve(__dirname, 'public', 'index.html'), // при создании index.html в build используем шаблон из папки public файл index.html
+		src: path.resolve(__dirname, 'src')
 	}
 
 	const PORT = env.port || 3000 // в первую очередь пытаемся получить переменные, но если они не заданы - используем значения по умолчанию
