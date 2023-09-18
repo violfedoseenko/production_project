@@ -1,5 +1,5 @@
 import React, { useState, FunctionComponent } from 'react'
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext, ThemeContextProps } from './ThemeContext';
+import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext, ThemeContextProps } from '../lib/ThemeContext';
 
 // localStorage всегда возвращает строку, а в качестве значения у нас используется тип Theme
 // необхрдимо сделать явное приведение

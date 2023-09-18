@@ -4,6 +4,7 @@ export interface BuildPath {
 	entry: string,
 	build: string, // папка со сборкой build
 	html: string, // путь до html в папке public
+	src: string, // путь до папки с исходным кодом
 }
 
 export interface BuildEnv {
