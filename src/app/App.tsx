@@ -4,6 +4,7 @@ import { useTheme } from 'app/providers/ThemeProvider'
 
 import './styles/index.scss'
 import { AppRouter } from 'app/providers/router'
+import { NavBar } from 'widgets/NavBar'
 
 
 export default function App() {
@@ -11,10 +12,11 @@ export default function App() {
 
 	return (
 		<div className={classNames('app', {}, [theme])}>
-			<button onClick={toggleTheme}>TOGGLE</button>
-			<Link to={'/'}> Главная </Link>
-			<Link to={'/about'}> О сайте </Link>
+			<NavBar/>
 			<AppRouter/>
+			<button onClick={toggleTheme}>TOGGLE</button>
 		</div>
 	)
 }
+
+
