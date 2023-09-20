@@ -28,6 +28,7 @@ export function buildWebpackConfig(options:BuildOptions): webpack.Configuration 
 		// webpack на вхлде имеет кучу файлов, на выходе может быть вскего один, если произошла ошибка - ее становится сложно отследить
 		// webpack создает карты исходного кода, по которым можно четко по стэк-трейсу увидеть где произошла ошибка
 		devtool: isDev ? 'inline-source-map' : undefined, 
-		devServer: isDev ? buildDevServer(options) : undefined
+		devServer: isDev ? buildDevServer(options) : undefined,
+		watch: true,
 	}
 }

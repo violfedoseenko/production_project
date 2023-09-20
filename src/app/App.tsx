@@ -5,6 +5,7 @@ import { useTheme } from 'app/providers/ThemeProvider'
 import './styles/index.scss'
 import { AppRouter } from 'app/providers/router'
 import { NavBar } from 'widgets/NavBar'
+import { SideBar } from 'widgets/SideBar'
 
 
 export default function App() {
@@ -13,8 +14,10 @@ export default function App() {
 	return (
 		<div className={classNames('app', {}, [theme])}>
 			<NavBar/>
-			<AppRouter/>
-			{/* <button onClick={toggleTheme}>TOGGLE</button> */}
+			<div className='content-page'>
+				<SideBar />
+				<AppRouter/>
+			</div>
 		</div>
 	)
 }
