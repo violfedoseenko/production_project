@@ -8,13 +8,13 @@ import { NavBar } from 'widgets/NavBar'
 
 
 export default function App() {
-	const {theme, toggleTheme} = useTheme()
+	const {theme} = useTheme()
 
 	return (
 		<div className={classNames('app', {}, [theme])}>
 			<NavBar/>
 			<AppRouter/>
-			<button onClick={toggleTheme}>TOGGLE</button>
+			{/* <button onClick={toggleTheme}>TOGGLE</button> */}
 		</div>
 	)
 }
