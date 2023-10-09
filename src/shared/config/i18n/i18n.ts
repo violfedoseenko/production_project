@@ -5,8 +5,8 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 i18n
-  .use(Backend)// дает возможность асинхронно чанками подгружать нужный язык
-  .use(LanguageDetector)
+  // .use(Backend)// дает возможность асинхронно чанками подгружать нужный язык
+  // .use(LanguageDetector)
   .use(initReactI18next)
   .init({
 	lng: "en",

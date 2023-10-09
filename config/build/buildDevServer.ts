@@ -7,5 +7,7 @@ export function buildDevServer(options:BuildOptions): DevServerConfiguration {
 		open: true,
 		//свойство позволяет проксировать запросы через корневую страницу index page
 		historyApiFallback: true,
+		//  для возможности работы  hot module replacement
+		hot: true,
 	}
 }
