@@ -6,27 +6,17 @@ module.exports = {
     extends: [
         'plugin:react/recommended',
         'airbnb',
+        'plugin:i18next/recommended',
     ],
     parser: '@typescript-eslint/parser',
-    // "overrides": [
-    //     {
-    //         "env": {
-    //             "node": true
-    //         },
-    //         "files": [
-    //             ".eslintrc.{js,cjs}"
-    //         ],
-    //         "parserOptions": {
-    //             "sourceType": "script"
-    //         }
-    //     }
-    // ],
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
     plugins: [
         'react',
+        '@typescript-eslint',
+        'i18next',
     ],
     rules: {
         'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
@@ -45,6 +35,7 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'max-len': ['error', { code: 150 }],
+        'i18next/no-literal-string': ['error', { markupOnly: true }], // следит только за отсутствием перевродов внутри jsx
     },
     globals: {
         __IS_DEV__: true,
