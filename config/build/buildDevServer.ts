@@ -9,5 +9,8 @@ export function buildDevServer(options:BuildOptions): DevServerConfiguration {
         historyApiFallback: true,
         //  для возможности работы  hot module replacement
         hot: true,
+        client: {
+            overlay: false,
+        },
     };
 }
