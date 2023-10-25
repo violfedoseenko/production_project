@@ -42,7 +42,8 @@ module.exports = {
 
     rules: {
 
-        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+        'react/jsx-filename-extension':
+        [2, { extensions: ['.js', '.jsx', '.tsx'] }],
 
         'react/jsx-indent': [2, 4], // 2- будет бросаться error при несоблюдении правила , 4 кол-во пробелов
 
@@ -72,7 +73,7 @@ module.exports = {
 
         'no-underscore-dangle': 'off',
 
-        'max-len': ['error', { code: 150 }],
+        'max-len': ['error', { ignoreComments: true, code: 120 }],
 
         'i18next/no-literal-string': ['error', { markupOnly: true }], // следит только за отсутствием перевродов внутри jsx
 

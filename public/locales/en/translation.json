@@ -1,9 +1,13 @@
 {
   "Toggle": "",
+  "throw error": "throw error",
   "toggle": "toggle",
   "Главная страница": "Main page",
   "О сайте": "",
+  "Обновить страницу": "Reload page",
+  "Произошла непредвиденная ошибка": "Something went wrong",
   "Смена языка": "",
+  "Страница не найдена": "Page not found ",
   "Язык": "English",
   "Язык1255": "",
   "перевод": "translation",
