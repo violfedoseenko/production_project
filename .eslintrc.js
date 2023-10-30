@@ -75,7 +75,14 @@ module.exports = {
 
         'max-len': ['error', { ignoreComments: true, code: 120 }],
 
-        'i18next/no-literal-string': ['error', { markupOnly: true }], // следит только за отсутствием перевродов внутри jsx
+        // следит только за отсутствием перевродов внутри jsx
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid'],
+            },
+        ],
 
         'linebreak-style': 'off',
 
@@ -86,5 +93,13 @@ module.exports = {
         __IS_DEV__: true,
 
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 
 };
