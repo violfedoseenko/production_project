@@ -29,5 +29,8 @@ export function buildWebpackConfig(options:BuildOptions): webpack.Configuration 
         devtool: isDev ? 'inline-source-map' : undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
         watch: true,
+        performance: {
+            hints: false,
+        },
     };
 }
