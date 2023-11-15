@@ -26,3 +26,24 @@ export default function App() {
         </div>
     );
 }
+
+// function App() {
+//     const { theme } = useTheme();
+
+//     return (
+//         <div className={classNames('app', {}, [theme])}>
+//             <Suspense fallback="">
+//                 <NavBar />
+
+//                 <div className="content-page">
+//                     <SideBar />
+//                     {/* <ErrorBoundary> */}
+//                     <AppRouter />
+//                     {/* </ErrorBoundary> */}
+//                 </div>
+//             </Suspense>
+//         </div>
+//     );
+// }
+
+// module.exports = App;
