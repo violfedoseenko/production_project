@@ -4,3 +4,4 @@ build/*.js
 build/*.txt
 build/*.html
 build/css
+storybook-static/
