@@ -31,8 +31,10 @@ export function SideBar({ className }: SideBarProps) {
                 data-testid="sidebar-toggle"
                 type="button"
                 onClick={onToggle}
+                className={cls.collapseBtn}
             >
-                {t('toggle')}
+                {collapsed ? '>' : '<'}
+                {/* {t('toggle')} */}
             </button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />

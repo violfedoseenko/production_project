@@ -5,6 +5,8 @@ import cls from './Button.module.scss';
 export enum ThemeButton {
     CLEAR = 'clear', // кнопка без всего - просто текст
     OUTLINE = 'outline',
+    BACKGROUND = 'background',
+    BACKGROUND_INVERTED = 'backgroundInverted'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

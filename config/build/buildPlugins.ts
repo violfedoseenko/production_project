@@ -21,19 +21,6 @@ export function buildPlugins({ paths, isDev }:BuildOptions): webpack.WebpackPlug
             __IS_DEV__: JSON.stringify(isDev),
         }),
 
-        // добавлено принудительное прерывание процесса в случае успеха сборки
-        // добавлено после того как столкнулась с проблемой в Github Actions:
-        // build успешно собирается, но продолжает быть "on running",
-        // и workflow не переходит  к следующему шагу
-        {
-            apply: (compiler:any) => {
-                compiler.hooks.done.tap('DonePlugin', () => {
-                    setTimeout(() => {
-                        process.exit(0);
-                    });
-                });
-            },
-        },
     ];
 
     if (isDev) {
@@ -41,6 +28,22 @@ export function buildPlugins({ paths, isDev }:BuildOptions): webpack.WebpackPlug
         plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false,
         }));
+    }
+
+    // добавлено принудительное прерывание процесса в случае успеха сборки
+    // добавлено после того как столкнулась с проблемой в Github Actions:
+    // build успешно собирается, но продолжает быть "on running",
+    // и workflow не переходит  к следующему шагу
+    if (!isDev) {
+        plugins.push({
+            apply: (compiler:any) => {
+                compiler.hooks.done.tap('DonePlugin', () => {
+                    setTimeout(() => {
+                        process.exit(0);
+                    });
+                });
+            },
+        });
     }
 
     return plugins;
