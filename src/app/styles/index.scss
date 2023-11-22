@@ -3,16 +3,16 @@
 @import "themes/normal";
 @import "themes/dark";
 
-.app,
-.app_modal {
-    font: var(--font-m);
-    color: var(--primary-color);
-}
-
-// body {
+// .app,
+// .app_modal {
 //     font: var(--font-m);
 //     color: var(--primary-color);
 // }
+
+body {
+    font: var(--font-m);
+    color: var(--primary-color);
+}
 
 .app {
     background: var(--bg-color);

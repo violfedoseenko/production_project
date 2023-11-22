@@ -11,7 +11,7 @@ const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || T
 
 const ThemeProvider:FunctionComponent = ({ children }) => {
     const [theme, setTheme] = useState<Theme>(defaultTheme);
-    // document.body.className = theme;
+    document.body.className = theme;
     return (
         <ThemeContext.Provider value={{
             theme,

@@ -11,6 +11,7 @@ interface ThemeSBProviderProps {
 
 export const ThemeSBProvider: FC<ThemeSBProviderProps> = ({ children, initialTheme }) => {
     const [theme, setTheme] = useState(initialTheme);
+    document.body.className = theme;
 
     const toggleTheme = useCallback(() => {
         setTheme(theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
