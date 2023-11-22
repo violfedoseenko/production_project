@@ -13,5 +13,6 @@
 		"css",
 		"scss"
 	],
-	"stylelint.config": null
+	"stylelint.config": null,
+	"i18n-ally.keystyle": "nested"
 }

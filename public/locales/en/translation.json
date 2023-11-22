@@ -1,15 +1,23 @@
 {
+  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit": {
+    " Aenean commodo ligula eget dolor": {
+      " Aenean massa": {
+        " Cum sociis natoque penatibus et magnis dis parturient montes": " Cum sociis natoque penatibus et magnis dis parturient montes"
+      }
+    }
+  },
   "Toggle": "",
   "throw error": "throw error",
   "toggle": "toggle",
+  "Войти": "Войти",
   "Главная": "Main page",
   "Главная страница": "Main page",
   "О сайте": "About",
   "Обновить страницу": "Reload page",
   "Произошла непредвиденная ошибка": "Something went wrong",
   "Смена языка": "",
-  "Страница не найдена": "Page not found ",
   "Сокращенный указатель языка": "EN",
+  "Страница не найдена": "Page not found ",
   "Язык": "English",
   "Язык1255": "",
   "перевод": "translation",

@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
-import React, { useState, FunctionComponent, useMemo } from 'react';
+import { useState, FunctionComponent } from 'react';
 import {
     LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext, ThemeContextProps,
 } from '../lib/ThemeContext';
@@ -11,7 +11,7 @@ const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || T
 
 const ThemeProvider:FunctionComponent = ({ children }) => {
     const [theme, setTheme] = useState<Theme>(defaultTheme);
-
+    // document.body.className = theme;
     return (
         <ThemeContext.Provider value={{
             theme,
