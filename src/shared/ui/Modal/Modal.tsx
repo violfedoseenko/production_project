@@ -1,5 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ReactNode, useCallback, useEffect } from 'react';
+import React, {
+    ReactNode, useCallback, useEffect, useState,
+} from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
@@ -9,7 +11,7 @@ interface ModalProps {
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
-
+    lazy?: boolean;
 }
 
 export const Modal = (props : ModalProps) => {
@@ -18,9 +20,17 @@ export const Modal = (props : ModalProps) => {
         children,
         isOpen,
         onClose,
+        lazy,
     } = props;
-
     const { theme } = useTheme();
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            // setIsMounted(true);
+            setIsMounted(!!isOpen);
+        }
+    }, [isOpen]);
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
@@ -30,7 +40,7 @@ export const Modal = (props : ModalProps) => {
         if (onClose) onClose();
     }, [onClose]);
 
-    const onContentClick = (e: MouseEvent) => {
+    const onContentClick = (e: React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
     };
 
@@ -48,11 +58,16 @@ export const Modal = (props : ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
+    if (lazy && !isMounted) {
+        // modal не отрисовывается;
+        return null;
+    }
+
     return (
         <Portal>
             <div className={classNames(cls.modal, mods, [className, theme])}>
                 <div className={cls.overlay} onClick={handleClose}>
-                    <div className={cls.content} onClick={(e) => onContentClick}>
+                    <div className={cls.content} onClick={onContentClick}>
                         {children}
                     </div>
                 </div>
